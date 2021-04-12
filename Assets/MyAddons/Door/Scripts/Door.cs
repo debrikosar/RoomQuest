@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Door : MonoBehaviour, IInteract
+{
+    [SerializeField]
+    private bool isOpen;
+
+    [SerializeField]
+    private bool isLocked;
+
+    [SerializeField]
+    private AudioSource doorAudioSource;
+
+    [SerializeField]
+    private AudioClip doorLockedAudioClip;
+
+    [SerializeField]
+    private AudioClip doorOpenAudioClip;
+
+    [SerializeField]
+    private AudioClip doorCloseAudioClip;
+
+    private Animator anim;
+
+    public void Start()
+    {
+        anim = GetComponentInParent<Animator>();
+    }
+
+    public void ShowHint()
+    {
+        
+    }
+
+    public void ToInteract()
+    {
+        if (isLocked)
+        {
+            anim.SetTrigger("Locked");
+            doorAudioSource.PlayOneShot(doorLockedAudioClip);
+        }
+        else
+        {
+            if (isOpen)
+            {
+                anim.SetTrigger("Close");
+                isOpen = false;
+                doorAudioSource.PlayOneShot(doorCloseAudioClip);
+            }
+            else
+            {
+                anim.SetTrigger("Open");
+                isOpen = true;
+                doorAudioSource.PlayOneShot(doorOpenAudioClip);
+            }
+        }
+    }
+}
