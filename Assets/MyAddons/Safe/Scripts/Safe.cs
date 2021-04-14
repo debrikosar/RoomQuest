@@ -5,56 +5,86 @@ using UnityEngine;
 public class Safe : MonoBehaviour, IInteract
 {
     [SerializeField]
-    private bool isOpen;
-
-    [SerializeField]
-    private bool isLocked;
-
-    [SerializeField]
     private AudioSource safeAudioSource;
-
-    [SerializeField]
-    private AudioClip doorLockedAudioClip;
 
     [SerializeField]
     private AudioClip doorOpenAudioClip;
 
     [SerializeField]
     private AudioClip doorCloseAudioClip;
+    
+    [Space]
+    [SerializeField]
+    private Canvas safeUI;
 
+    [SerializeField]
     private Animator anim;
 
-    public void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    [SerializeField]
+    private PlayerControl playerControl;
+
+    [Space]
+    [SerializeField]
+    private bool isOpen;
+
+    [SerializeField]
+    private bool isLocked;
+
+    private string userInputCode;
+
+    [SerializeField]
+    private string rigthInputCode = "1234";
 
     public void ShowHint()
     {
+       
+    }
 
+    public void SwitchCanvasEnabled()
+    {
+        safeUI.enabled = !safeUI.enabled;
+        playerControl.enabled = !playerControl.enabled;
+        Cursor.visible = !Cursor.visible;
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ToInteract()
     {
         if (isLocked)
+            SwitchCanvasEnabled();
+        else
+            Open();
+    }
+
+    public void Open()
+    {
+        if (isOpen)
         {
-            anim.SetTrigger("Locked");
-            safeAudioSource.PlayOneShot(doorLockedAudioClip);
+            anim.SetTrigger("Close");
+            isOpen = false;
+            safeAudioSource.PlayOneShot(doorCloseAudioClip);
         }
         else
         {
-            if (isOpen)
-            {
-                anim.SetTrigger("Close");
-                isOpen = false;
-                safeAudioSource.PlayOneShot(doorCloseAudioClip);
-            }
-            else
-            {
-                anim.SetTrigger("Open");
-                isOpen = true;
-                safeAudioSource.PlayOneShot(doorOpenAudioClip);
-            }
+            anim.SetTrigger("Open");
+            isOpen = true;
+            safeAudioSource.PlayOneShot(doorOpenAudioClip);
         }
+    }
+
+    public void ButtonPressed(string num)
+        => userInputCode += num;
+
+    public void OpenButtonPressed()
+    {
+        if (userInputCode == rigthInputCode)
+            isLocked = false;
+        userInputCode = default;
+
+        SwitchCanvasEnabled();
     }
 }
