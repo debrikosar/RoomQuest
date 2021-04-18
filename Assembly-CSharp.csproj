@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Task.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\BreakableWindow.cs" />
     <Compile Include="Assets\MyAddons\TV\Scripts\ButtonTV.cs" />
     <Compile Include="Assets\MyAddons\TV\Scripts\OutputRemoteTV.cs" />
@@ -63,25 +64,26 @@
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonMovement.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Zoom.cs" />
     <Compile Include="Assets\MyAddons\Laptop\Scripts\Skype.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\FirstPersonAudio.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\WindowInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Crouch.cs" />
+    <Compile Include="Assets\Scripts\MovableObject.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonLook.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\CatController.cs" />
     <Compile Include="Assets\MyAddons\MoveObjectsSystem\Scripts\MoveObjectsSystem.cs" />
     <Compile Include="Assets\MyAddons\Door\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Imports\TMI - Bedroom\Scripts\AnimationDebug.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\RandomPositions.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\MyAddons\Safe\Scripts\Safe.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\SaveData.cs" />
-    <Compile Include="Assets\Scripts\MenuScript.cs" />
-    <Compile Include="Assets\Scripts\MovableObject.cs" />
-    <Compile Include="Assets\Scripts\Task.cs" />
+    <Compile Include="Assets\Scripts\BackgroundMusicScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\MyAddons\Laptop\StandardColorMask.shader" />
