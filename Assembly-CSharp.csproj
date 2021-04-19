@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E39F610D-8B33-A53C-7159-D4F4442EB524}</ProjectGuid>
+    <ProjectGuid>{3D2D5B61-CDC9-CBE3-2203-280FE398F9FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,28 +56,34 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Task.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\BreakableWindow.cs" />
     <Compile Include="Assets\MyAddons\TV\Scripts\ButtonTV.cs" />
     <Compile Include="Assets\MyAddons\TV\Scripts\OutputRemoteTV.cs" />
+    <Compile Include="Assets\MyAddons\Laptop\Scripts\Laptop.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonMovement.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Zoom.cs" />
     <Compile Include="Assets\MyAddons\Laptop\Scripts\Skype.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\FirstPersonAudio.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\WindowInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Crouch.cs" />
+    <Compile Include="Assets\Scripts\MovableObject.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonLook.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\CatController.cs" />
     <Compile Include="Assets\MyAddons\MoveObjectsSystem\Scripts\MoveObjectsSystem.cs" />
     <Compile Include="Assets\MyAddons\Door\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Imports\TMI - Bedroom\Scripts\AnimationDebug.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\RandomPositions.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\MyAddons\Safe\Scripts\Safe.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\MyAddons\Laptop\Scripts\Laptop.cs" />
+    <Compile Include="Assets\Scripts\BackgroundMusicScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\MyAddons\Laptop\StandardColorMask.shader" />
@@ -88,6 +94,10 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\JsonDotNet\link.xml" />
+     <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.XML" />
+     <None Include="Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.XML" />
+     <None Include="Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -96,7 +106,10 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.dll" />
+     <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.XML" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -324,6 +337,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -700,11 +716,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{48A691F0-FC10-FB43-9AE7-B98467C9734B}</Project>
+      <Project>{B98BB61F-5CD7-FBDF-9632-B18D46605AF6}</Project>
       <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{7703F08C-ED9A-F155-8789-ADEEA9216EB8}</Project>
+      <Project>{27A348EB-5755-B099-77CB-2B44029DDF89}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
