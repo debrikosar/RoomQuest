@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Imports\TMI - Kitchen\Scripts\Openable.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\FirstPersonAudio.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\WindowInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\Crouch.cs" />
@@ -74,7 +75,9 @@
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonLook.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\CatController.cs" />
     <Compile Include="Assets\MyAddons\MoveObjectsSystem\Scripts\MoveObjectsSystem.cs" />
+    <Compile Include="Assets\Imports\Mg3D_Food\Scripts\Food.cs" />
     <Compile Include="Assets\Scripts\BackgroundMusicScript.cs" />
+    <Compile Include="Assets\Scripts\OutDoorSounds.cs" />
     <Compile Include="Assets\MyAddons\Door\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Imports\TMI - Bedroom\Scripts\AnimationDebug.cs" />
@@ -84,9 +87,7 @@
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Imports\TMI - Kitchen\Scripts\Openable.cs" />
-    <Compile Include="Assets\Imports\Mg3D_Food\Scripts\Food.cs" />
-    <Compile Include="Assets\Scripts\OutDoorSounds.cs" />
+    <Compile Include="Assets\Imports\Clock\Scripts\Clock.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\MyAddons\Laptop\StandardColorMask.shader" />

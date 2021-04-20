@@ -28,7 +28,7 @@ public class MenuScript : MonoBehaviour
             LoadGame();
     }
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             SummonMenu();
