@@ -74,6 +74,7 @@
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\FirstPersonLook.cs" />
     <Compile Include="Assets\MyAddons\Cat\Scripts\CatController.cs" />
     <Compile Include="Assets\MyAddons\MoveObjectsSystem\Scripts\MoveObjectsSystem.cs" />
+    <Compile Include="Assets\Scripts\BackgroundMusicScript.cs" />
     <Compile Include="Assets\MyAddons\Door\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Imports\TMI - Bedroom\Scripts\AnimationDebug.cs" />
@@ -83,7 +84,6 @@
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\BackgroundMusicScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\MyAddons\Laptop\StandardColorMask.shader" />
