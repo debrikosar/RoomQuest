@@ -84,12 +84,16 @@
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\MyAddons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\MyAddons\PlayerController\Scripts\Components\GroundCheck.cs" />
+    <Compile Include="Assets\Imports\TMI - Kitchen\Scripts\Openable.cs" />
+    <Compile Include="Assets\Imports\Mg3D_Food\Scripts\Food.cs" />
+    <Compile Include="Assets\Scripts\OutDoorSounds.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\MyAddons\Laptop\StandardColorMask.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\MyAddons\Cat\Animations\low_poly_cat_animation_list.txt" />
+     <None Include="Assets\Imports\Mg3D_Food\README.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
