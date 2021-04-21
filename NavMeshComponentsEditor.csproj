@@ -56,15 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshAssetManager.cs" />
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
-    <Compile Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshAssetManager.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
+    <Compile Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\MyAddons\Cat\Scripts\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
+     <None Include="Assets\Addons\Cat\Scripts\NavMeshComponents\Editor\NavMeshComponentsEditor.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

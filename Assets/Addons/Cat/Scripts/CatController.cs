@@ -10,15 +10,17 @@ public class CatController : MonoBehaviour
     public NavMeshAgent Agent;
     public Animator Anim;
     public Transform Player;
+    public GameObject CatBowl;
+    public CatBowl catBowlData;
 
     public RandomPositions RandomPositions;
 
     private bool isSitting;
-    private bool isFed;
+    public bool isFed;
     private bool isHunt;
 
     [SerializeField]
-    private float visibleDistance = 7f;
+    private float visibleDistance = 5f;
     [SerializeField]
     private float huntSpeed = 4;
     [SerializeField]
@@ -32,6 +34,7 @@ public class CatController : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
         Player = Player.GetComponent<Transform>();
+        catBowlData = CatBowl.GetComponent<CatBowl>();
     }
 
     public void WalkAnim()
@@ -47,18 +50,20 @@ public class CatController : MonoBehaviour
     }
 
     void Update()
-    {
-        if (!isFed && Vector3.Distance(transform.position, Player.transform.position) < visibleDistance)
-            Hunt();
+    {    
+        if (!isFed && catBowlData.isHaveFood && Vector3.Distance(transform.position, CatBowl.transform.position) < visibleDistance)
+            Hunt(CatBowl.transform);
+        else if (!isFed && Vector3.Distance(transform.position, Player.transform.position) < visibleDistance)
+            Hunt(Player.transform);
         else
             RandomWalking();
     }
 
-    public void Hunt()
+    public void Hunt(Transform huntTarget)
     {
         isHunt = true;
         Agent.speed = huntSpeed;
-        Agent.SetDestination(Player.transform.position);
+        Agent.SetDestination(huntTarget.transform.position);
         WalkAnim();
     }
 
