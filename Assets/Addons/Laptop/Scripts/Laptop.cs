@@ -14,6 +14,9 @@ public class Laptop : MonoBehaviour, IInteract
     [SerializeField]
     private GameObject targetPosition;
 
+    [SerializeField]
+    private Canvas DesktopCanvas;
+
     private bool isCameraZoom;
     private float speed = 3f;
     private GameObject cameraTransformData;
@@ -78,14 +81,6 @@ public class Laptop : MonoBehaviour, IInteract
         cameraTransformData.transform.rotation = gameCamera.transform.rotation;
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && isCameraZoom)
-        {
-            ToInteract();
-        }
-    }
-
     public void SwitchPlayerControl()
     {
         playerControl.enabled = !playerControl.enabled;
@@ -95,6 +90,12 @@ public class Laptop : MonoBehaviour, IInteract
             Cursor.lockState = CursorLockMode.None;
         else
             Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void OffButtonClick()
+    {
+        ToInteract();
+        DesktopCanvas.enabled = false;
     }
 
     public void ShowHint()
