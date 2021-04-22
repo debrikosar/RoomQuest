@@ -35,9 +35,12 @@ public class Safe : MonoBehaviour, IInteract
     [SerializeField]
     private string rigthInputCode = "1234";
 
-    public void ShowHint()
+    public string ShowHint()
     {
-       
+        if (!isOpen)
+            return "¬вести пароль";
+        else
+            return "ќткрыть сейф";
     }
 
     public void SwitchCanvasEnabled()

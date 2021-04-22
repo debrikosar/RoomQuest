@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Addons\Laptop\Scripts\TimeText.cs" />
     <Compile Include="Assets\Scripts\Task.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\BreakableWindow.cs" />
     <Compile Include="Assets\Addons\TV\Scripts\ButtonTV.cs" />
@@ -84,14 +85,13 @@
     <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Imports\TMI - Bedroom\Scripts\AnimationDebug.cs" />
     <Compile Include="Assets\Addons\Cat\Scripts\RandomPositions.cs" />
+    <Compile Include="Assets\Addons\Laptop\Scripts\OnOffButton.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\GameTimeSystem.cs" />
     <Compile Include="Assets\Addons\Safe\Scripts\Safe.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Addons\Laptop\Scripts\OnOffButton.cs" />
-    <Compile Include="Assets\Addons\Laptop\Scripts\TimeText.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Addons\Laptop\StandardColorMask.shader" />
@@ -118,9 +118,11 @@
      <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.dll" />
      <None Include="Assets\JsonDotNet\Assemblies\AOT\Newtonsoft.Json.XML" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\Imports\MenuBoard\Doc\ChangeLogs.txt" />
      <None Include="Assets\JsonDotNet\Assemblies\Windows\Newtonsoft.Json.dll" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Imports\MenuBoard\Doc\ReadMe.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />

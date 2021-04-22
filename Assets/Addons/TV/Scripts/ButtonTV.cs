@@ -7,10 +7,8 @@ public class ButtonTV : MonoBehaviour, IInteract
     [SerializeField]
     private OutputRemoteTV outputRemoteScipt;
 
-    public void ShowHint()
-    {
-        
-    }
+    public string ShowHint()
+        => "Нажать кнопку на пульте";
 
     public void ToInteract()
     {

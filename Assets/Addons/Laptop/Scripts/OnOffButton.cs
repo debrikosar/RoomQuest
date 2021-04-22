@@ -7,10 +7,8 @@ public class OnOffButton : MonoBehaviour, IInteract
     [SerializeField]
     private Canvas desktopCanvas;
 
-    public void ShowHint()
-    {
-        throw new System.NotImplementedException();
-    }
+    public string ShowHint()
+        => "Нажать кнопку питания";
 
     public void ToInteract()
     {
