@@ -14,10 +14,8 @@ public class Openable : MonoBehaviour, IInteract
         animator = GetComponentInParent<Animator>();    
     }
 
-    public void ShowHint()
-    {
-        throw new System.NotImplementedException();
-    }
+    public string ShowHint()
+        => "Открыть";
 
     public void ToInteract()
     {

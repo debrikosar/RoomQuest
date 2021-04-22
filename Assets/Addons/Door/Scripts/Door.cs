@@ -29,10 +29,8 @@ public class Door : MonoBehaviour, IInteract
         anim = GetComponentInParent<Animator>();
     }
 
-    public void ShowHint()
-    {
-        
-    }
+    public string ShowHint()
+        => "Открыть";
 
     public void ToInteract()
     {

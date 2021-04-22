@@ -10,10 +10,8 @@ public class Food : MonoBehaviour, IInteract
     [SerializeField]
     private float coloriesCount;
 
-    public void ShowHint()
-    {
-        throw new System.NotImplementedException();
-    }
+    public string ShowHint()
+        => $"ׁתוסעü {foodName}";
 
     public void ToInteract()
     {

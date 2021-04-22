@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InteractRaycast : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class InteractRaycast : MonoBehaviour
     [SerializeField]
     float rayMaxDistance;
 
-    //[SerializeField]
-    //Canvas hintCanvas;
+    [SerializeField]
+    Canvas hintCanvas;
+
+    TextMeshProUGUI hintText;
+
+    public void Start()
+    {
+        hintText = hintCanvas.GetComponentInChildren<TextMeshProUGUI>();
+    }
 
     void Update()
     {
@@ -25,15 +33,15 @@ public class InteractRaycast : MonoBehaviour
 
             if (selectedItem != null)
             {
-                //hintCanvas.enabled = true;
-                //hintCanvas.GetComponentInChildren<Text>().text = selectedItem.ShowHint();
+                hintCanvas.enabled = true;
+                hintText.text = selectedItem.ShowHint();
 
                 if (Input.GetKeyDown(KeyCode.E))
                     selectedItem.ToInteract();
             }
-            //else hintCanvas.enabled = false;
+            else hintCanvas.enabled = false;
         }
-        //else hintCanvas.enabled = false;
+        else hintCanvas.enabled = false;
 
         Debug.DrawLine(ray.origin, hit.point, Color.red);
     }

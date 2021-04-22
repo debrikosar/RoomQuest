@@ -6,5 +6,5 @@ public interface IInteract
 {
     public void ToInteract();
 
-    public void ShowHint();
+    public string ShowHint();
 }

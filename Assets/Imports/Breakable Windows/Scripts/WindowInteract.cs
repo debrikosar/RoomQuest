@@ -19,9 +19,12 @@ public class WindowInteract : MonoBehaviour, IInteract
         breakableWindow = GetComponent<BreakableWindow>();
     }
 
-    public void ShowHint()
+    public string ShowHint()
     {
-        throw new System.NotImplementedException();
+        if (!isOpen)
+            return "Открыть окно";
+        else
+            return "Закрыть окно";
     }
 
     public void ToInteract()

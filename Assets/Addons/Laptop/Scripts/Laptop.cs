@@ -29,15 +29,18 @@ public class Laptop : MonoBehaviour, IInteract
 
     public void ToInteract()
     {
-        if (!isCameraZoom)
+        if (DesktopCanvas.enabled)
         {
-            startedCoroutine = StartCoroutine(ZoomCoroutine(targetPosition.transform));
-        }
-        else
-        {
-            startedCoroutine = StartCoroutine(ZoomCoroutine(cameraTransformData.transform));
-        }
-        SwitchPlayerControl();
+            if (!isCameraZoom)
+            {
+                startedCoroutine = StartCoroutine(ZoomCoroutine(targetPosition.transform));
+            }
+            else
+            {
+                startedCoroutine = StartCoroutine(ZoomCoroutine(cameraTransformData.transform));
+            }
+            SwitchPlayerControl();
+        }  
     }
 
     public IEnumerator ZoomCoroutine(Transform ZoomTo)
@@ -48,31 +51,17 @@ public class Laptop : MonoBehaviour, IInteract
             speed = 3;
         }
         else
-            speed = 7;
+            speed = 15;
             
-
         isCameraZoom = !isCameraZoom;
-
         while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 0.1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 0.1f)
         {
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, ZoomTo.position, speed * Time.deltaTime);
             gameCamera.transform.rotation = Quaternion.Lerp(gameCamera.transform.rotation, ZoomTo.rotation, speed * Time.deltaTime);
 
-            Debug.Log(gameCamera.transform.position + "|||" + ZoomTo.transform.position);
-
             yield return new WaitForEndOfFrame();          
         }
         StopCoroutine(startedCoroutine);
-
-        //while (gameCamera.transform.position.normalized != ZoomTo.position.normalized || gameCamera.transform.rotation.normalized != ZoomTo.rotation.normalized)
-        //{
-        //    gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, ZoomTo.position, speed * Time.deltaTime);
-        //    gameCamera.transform.rotation = Quaternion.Lerp(gameCamera.transform.rotation, ZoomTo.rotation, speed * Time.deltaTime);
-
-        //    Debug.Log(gameCamera.transform.position + "|||" + ZoomTo.transform.position);
-
-        //    yield return new WaitForEndOfFrame();
-        //}
     }
 
     public void SaveCameraPosition()
@@ -98,8 +87,6 @@ public class Laptop : MonoBehaviour, IInteract
         DesktopCanvas.enabled = false;
     }
 
-    public void ShowHint()
-    {
-        throw new System.NotImplementedException();
-    }
+    public string ShowHint()
+        => "Сесть за компьютер";
 }
