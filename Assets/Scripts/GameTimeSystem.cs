@@ -7,8 +7,8 @@ public class GameTimeSystem : MonoBehaviour
     public static GameTimeSystem instance = null;
 
     //-- set start time 00:00
-    public int minutes = 0;
-    public int hour = 0;
+    public int minutes;
+    public int hour;
 
     //-- time speed factor
     public float timeSpeed = 1.0f;     // 1.0f = realtime, < 1.0f = slower, > 1.0f = faster
@@ -61,5 +61,10 @@ public class GameTimeSystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    public float GetTimeForSun()
+    {
+        return 1f / 86400f * (hour * 3600 + minutes * 60 + seconds);
     }
 }

@@ -70,11 +70,13 @@
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\SoundController.cs" />
     <Compile Include="Assets\Imports\TMI - Kitchen\Scripts\Openable.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\FirstPersonAudio.cs" />
     <Compile Include="Assets\Imports\Breakable Windows\Scripts\WindowInteract.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\Crouch.cs" />
     <Compile Include="Assets\Scripts\MovableObject.cs" />
+    <Compile Include="Assets\Scripts\SettingsScript.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\FirstPersonLook.cs" />
     <Compile Include="Assets\Addons\Cat\Scripts\CatController.cs" />
     <Compile Include="Assets\Addons\MoveObjectsSystem\Scripts\MoveObjectsSystem.cs" />
@@ -92,8 +94,7 @@
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\SoundController.cs" />
-    <Compile Include="Assets\Scripts\SettingsScript.cs" />
+    <Compile Include="Assets\Scripts\DayNight.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Addons\Laptop\StandardColorMask.shader" />

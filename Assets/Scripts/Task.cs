@@ -3,15 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Task
+[CreateAssetMenu]
+public class Task : ScriptableObject
 {
     public string taskName;
+    public string taskDescription;
     public bool taskStatus;
-
-    public Task(string taskName, bool taskStatus)
-    {
-        this.taskName = taskName;
-        this.taskStatus = taskStatus;
-    }
 }

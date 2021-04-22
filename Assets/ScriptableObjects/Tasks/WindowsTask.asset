@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6572f6359cc2446b83370df008720a, type: 3}
+  m_Name: WindowsTask
+  m_EditorClassIdentifier: 
+  taskName: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043E\u043A\u043D\u0430"
+  taskDescription: "\u041F\u043E\u0433\u043E\u0434\u043A\u0430 \u0441\u0435\u0433\u043E\u0434\u043D\u044F
+    \u043D\u0435 \u043E\u0447\u0435\u043D\u044C. \u041D\u0430\u0434\u043E \u0431\u044B
+    \u0437\u0430\u043A\u0440\u044B\u0442\u044C \u043E\u043A\u043D\u0430"
+  taskStatus: 0
