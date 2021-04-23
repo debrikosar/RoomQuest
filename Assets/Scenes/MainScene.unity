@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4488395, g: 0.4989022, b: 0.5756973, a: 1}
+  m_IndirectSpecularColor: {r: 0.4488395, g: 0.49890238, b: 0.5756967, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1295,7 +1295,7 @@ GameObject:
   - component: {fileID: 370708628}
   - component: {fileID: 370708627}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: OrderButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1429,7 +1429,7 @@ GameObject:
   - component: {fileID: 385503733}
   - component: {fileID: 385503732}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 482794962}
   - component: {fileID: 482794961}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 551830280}
   - component: {fileID: 551830279}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2669,7 +2669,7 @@ GameObject:
   - component: {fileID: 721299492}
   - component: {fileID: 721299491}
   m_Layer: 0
-  m_Name: Text
+  m_Name: CardCvvInputText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3102,7 +3102,7 @@ GameObject:
   - component: {fileID: 818713086}
   - component: {fileID: 818713085}
   m_Layer: 0
-  m_Name: Placeholder
+  m_Name: PlaceholderNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3256,7 +3256,7 @@ GameObject:
   - component: {fileID: 846269728}
   - component: {fileID: 846269727}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4898,7 +4898,7 @@ GameObject:
   - component: {fileID: 1037164504}
   - component: {fileID: 1037164503}
   m_Layer: 0
-  m_Name: Placeholder
+  m_Name: PlaceholderCvv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5455,7 +5455,7 @@ GameObject:
   - component: {fileID: 1111054881}
   - component: {fileID: 1111054880}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5589,7 +5589,7 @@ GameObject:
   - component: {fileID: 1114611898}
   - component: {fileID: 1114611897}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: OffButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7275,7 +7275,7 @@ GameObject:
   - component: {fileID: 1485419746}
   - component: {fileID: 1485419745}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7409,7 +7409,7 @@ GameObject:
   - component: {fileID: 1527994301}
   - component: {fileID: 1527994300}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: SaveButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7544,7 +7544,7 @@ GameObject:
   - component: {fileID: 1539602146}
   - component: {fileID: 1539602145}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7678,7 +7678,7 @@ GameObject:
   - component: {fileID: 1612607875}
   - component: {fileID: 1612607874}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TaxiButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7909,7 +7909,7 @@ GameObject:
   - component: {fileID: 1629467825}
   - component: {fileID: 1629467824}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8043,7 +8043,7 @@ GameObject:
   - component: {fileID: 1642678316}
   - component: {fileID: 1642678315}
   m_Layer: 0
-  m_Name: Text
+  m_Name: CardInputText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8703,7 +8703,7 @@ GameObject:
   - component: {fileID: 1904057414}
   - component: {fileID: 1904057413}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: OpenButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8837,7 +8837,7 @@ GameObject:
   - component: {fileID: 1952414384}
   - component: {fileID: 1952414383}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9088,7 +9088,7 @@ GameObject:
   - component: {fileID: 2003990972}
   - component: {fileID: 2003990971}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21143,7 +21143,7 @@ GameObject:
   - component: {fileID: 2092359677682301850}
   - component: {fileID: 8068435472015208932}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MenuSaveButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29109,7 +29109,7 @@ GameObject:
   - component: {fileID: 7751490614234841596}
   - component: {fileID: 4241115532883021424}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MenuQuitButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
