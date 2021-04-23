@@ -1,0 +1,16 @@
+{
+  "Notification": "Все твои сохранения будут удалены! Уверен, приятель?",
+  "DeleteSavesButtonText": "Удалить сохранения",
+  "MusicLabel": "Музыка",
+  "SoundLabel": "Звук",
+  "DeclineButtonText": "Неа",
+  "ConfirmButtonText": "Ага",
+  "SwitchToRuEng": "Рус",
+  "PlayButtonText": "Играть",
+  "GameTitle": "Домоквест",
+  "SettingsButtonText": "Настройки",
+  "SettingsTitle": "Настройки",
+  "CloseSettingsButtonText": "Закрыть",
+  "ExitButtonText": "Выход",
+  "SwitchToEngText": "Англ"
+}
