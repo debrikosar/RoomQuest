@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,17 @@ public class JSONLocalizator : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    void Update()
+    {
+        if (isEditing)
+        {
+            InitializeLocalizationFileName();
+            EditLocalizationFile();
+            isEditing = !isEditing;
+        }
+
+    }
+
     public void InitializeLocalizator()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
@@ -60,9 +72,9 @@ public class JSONLocalizator : MonoBehaviour
     public void InitializeLocalizationFileName()
     {
         if (isEnglish)
-            activeLocalizationFileName = "/" + currentSceneName + englishLocalizationFileName;
+            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
         else
-            activeLocalizationFileName = "/" + currentSceneName + russianLocalizationFileName;
+            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -89,7 +101,7 @@ public class JSONLocalizator : MonoBehaviour
 
     public void LoadLocalizationData()
     {
-        localizedText = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Application.persistentDataPath + activeLocalizationFileName));
+        localizedText = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(activeLocalizationFileName));
     }
 
     public void LoadLocalizationOnUI()
@@ -102,7 +114,7 @@ public class JSONLocalizator : MonoBehaviour
 
     public void SaveLocalizationData()
     {
-        File.WriteAllText(Application.persistentDataPath + activeLocalizationFileName, JsonConvert.SerializeObject(localizedText, Formatting.Indented));
+        File.WriteAllText(activeLocalizationFileName, JsonConvert.SerializeObject(localizedText, Formatting.Indented));
     }
 
     public void SaveLocalizationDataFromUI()

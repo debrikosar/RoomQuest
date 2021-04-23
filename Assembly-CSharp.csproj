@@ -68,6 +68,7 @@
     <Compile Include="Assets\Imports\Clock\Scripts\Clock.cs" />
     <Compile Include="Assets\Addons\Laptop\Scripts\TaxiUI.cs" />
     <Compile Include="Assets\Addons\Cat\Scripts\CatBowl.cs" />
+    <Compile Include="Assets\Scripts\JSONLocalizator.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\Jump.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\PlayerControl.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\IInteract.cs" />
     <Compile Include="Assets\Addons\PlayerControllerV2\Scripts\InteractRaycast.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\JSONLocalizator.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Addons\Laptop\StandardColorMask.shader" />
