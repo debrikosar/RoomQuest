@@ -11,6 +11,8 @@ public class OutputRemoteTV : MonoBehaviour
     public GameObject QuadTV;
 
     private MeshRenderer QuadMeshRenderer;
+
+    public static event Action onTVturnedOn;
     void Start()
     {
         QuadMeshRenderer = QuadTV.GetComponent<MeshRenderer>();
@@ -25,6 +27,7 @@ public class OutputRemoteTV : MonoBehaviour
             {
                 VideoPlayerTV.enabled = !VideoPlayerTV.enabled;
                 QuadMeshRenderer.enabled = !QuadMeshRenderer.enabled;
+                onTVturnedOn?.Invoke();
             }
         }
     }

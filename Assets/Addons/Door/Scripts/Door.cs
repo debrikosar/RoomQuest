@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,9 +25,12 @@ public class Door : MonoBehaviour, IInteract
 
     private Animator anim;
 
+    public static event Action OnCheckiIfDoorIsLocked;
+
     public void Start()
     {
         anim = GetComponentInParent<Animator>();
+        TasksScript.OnTasksFinished += openLock;
     }
 
     public string ShowHint()
@@ -34,6 +38,8 @@ public class Door : MonoBehaviour, IInteract
 
     public void ToInteract()
     {
+        OnCheckiIfDoorIsLocked?.Invoke();
+
         if (isLocked)
         {
             anim.SetTrigger("Locked");
@@ -54,5 +60,16 @@ public class Door : MonoBehaviour, IInteract
                 doorAudioSource.PlayOneShot(doorOpenAudioClip);
             }
         }
+    }
+
+    public void openLock()
+    {
+        isLocked = false;
+        Debug.Log("hello");
+    }
+
+    private void OnDestroy()
+    {
+        TasksScript.OnTasksFinished -= openLock;
     }
 }

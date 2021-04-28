@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class WindowInteract : MonoBehaviour, IInteract
 
     public BreakableWindow breakableWindow;
     public UnityEvent onBehaviourChanged;
+
+    public static event Action onWindowOpen;
+    public static event Action onWindowClose;
 
     public void Start()
     {
@@ -31,11 +35,13 @@ public class WindowInteract : MonoBehaviour, IInteract
     {
         if (isOpen)
         {
+            onWindowClose?.Invoke();
             anim.SetTrigger("Close");
             isOpen = false;
         }
         else
         {
+            onWindowOpen?.Invoke();
             anim.SetTrigger("Open");
             isOpen = true;
         }

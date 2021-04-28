@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,8 @@ public class Safe : MonoBehaviour, IInteract
     [SerializeField]
     private string rigthInputCode = "1234";
 
+    public static event Action OnSafeOpened;
+
     public string ShowHint()
     {
         if (!isOpen)
@@ -60,7 +63,10 @@ public class Safe : MonoBehaviour, IInteract
         if (isLocked)
             SwitchCanvasEnabled();
         else
+        {
             Open();
+            OnSafeOpened?.Invoke();
+        }
     }
 
     public void Open()
@@ -85,7 +91,9 @@ public class Safe : MonoBehaviour, IInteract
     public void OpenButtonPressed()
     {
         if (userInputCode == rigthInputCode)
+        {
             isLocked = false;
+        }
         userInputCode = default;
 
         SwitchCanvasEnabled();
