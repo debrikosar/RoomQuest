@@ -46,6 +46,7 @@ public class Safe : MonoBehaviour, IInteract
     public void SwitchCanvasEnabled()
     {
         safeUI.enabled = !safeUI.enabled;
+
         playerControl.enabled = !playerControl.enabled;
         Cursor.visible = !Cursor.visible;
 

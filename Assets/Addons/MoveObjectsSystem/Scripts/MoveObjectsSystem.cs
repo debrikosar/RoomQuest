@@ -16,6 +16,7 @@ public class MoveObjectsSystem : MonoBehaviour {
 	private float mass, curHeight, curForce;
 	private Transform clone, local;
 	private static bool _get;
+	public Camera camera;
 
 	public static bool isDrag
 	{
@@ -36,7 +37,7 @@ public class MoveObjectsSystem : MonoBehaviour {
 		{
 			Rigidbody tmpBody = body;
 			Clear();
-			tmpBody.velocity = Camera.main.transform.TransformDirection(Vector3.forward) * curForce;
+			tmpBody.velocity = camera.transform.TransformDirection(Vector3.forward) * curForce;
 		}
 
 		if(Input.GetAxis("Mouse ScrollWheel") > 0 && body)
@@ -60,7 +61,7 @@ public class MoveObjectsSystem : MonoBehaviour {
 	Rigidbody GetRigidbody()
 	{
 		RaycastHit hit;
-		Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width/2, Screen.height/2));
+		Ray ray = camera.ScreenPointToRay(new Vector2(Screen.width/2, Screen.height/2));
 		if(Physics.Raycast(ray, out hit, distance))
 		{
 			if(hit.rigidbody && !hit.rigidbody.isKinematic && hit.rigidbody.mass <= maxMass)
@@ -94,7 +95,7 @@ public class MoveObjectsSystem : MonoBehaviour {
 	{
 		if(!body) return;
 
-		Vector3 lookAt = Camera.main.transform.position;
+		Vector3 lookAt = camera.transform.position;
 		lookAt.y = clone.position.y;
 		clone.LookAt(lookAt);
 		SetLocal();
@@ -134,12 +135,14 @@ public class MoveObjectsSystem : MonoBehaviour {
 
 	void Start()
 	{
+		camera = GetComponent<Camera>();
+
 		if(!clone) // создание вспомогательных точек
 		{
 			local = new GameObject().transform;
 			clone = new GameObject().transform;
 			local.parent = clone;
-			clone.parent = Camera.main.transform;
+			clone.parent = camera.transform;
 		}
 
 		heightValueMin = -Mathf.Abs(heightValueMin);
