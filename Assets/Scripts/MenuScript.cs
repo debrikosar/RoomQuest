@@ -10,6 +10,8 @@ public class MenuScript : MonoBehaviour
     GameObject gameMenu;
     [SerializeField]
     GameObject playerControl;
+    [SerializeField]
+    GameObject SaveConfirmationPanel;
 
     [SerializeField]
     List <GameObject> trackedMovableObjects;
@@ -61,10 +63,14 @@ public class MenuScript : MonoBehaviour
 
     public void SaveGame()
     {
+        SaveConfirmationPanel.SetActive(true);
         saveData.RecordTaks(tasksScript.tasksStatus);
         saveData.RecordMovableObjects(trackedMovableObjects);
         File.WriteAllText(Application.persistentDataPath + saveFileName, JsonConvert.SerializeObject(saveData, Formatting.Indented));
     }
+
+    public void CloseSaveConfirmationPanel() =>
+        SaveConfirmationPanel.SetActive(false);
 
     public void LoadGame()
     {
