@@ -26,8 +26,13 @@ public class TasksScript : MonoBehaviour
 
     public static event Action OnTasksFinished;
 
+    private Dictionary<string, string> localizedBoardText;
+
     private void Start()
     {
+        localizedBoardText = GameObject.FindGameObjectWithTag("LocalizationManager").GetComponent<JSONLocalizator>().localizedBoard;
+        taskBoard[6].text = localizedBoardText["Tasks"];
+
         openedWindows = 0;
         foodCount = 0;
         fillTasksStatus();
@@ -64,30 +69,30 @@ public class TasksScript : MonoBehaviour
 
     public void UpdateFields()
     {
-        taskBoard[0].text = foodEaten + $"{(tasksStatus[foodEaten] ? " V" : " X")}";
-        taskBoard[1].text = catFed + $"{(tasksStatus[catFed] ? " V" : " X")}";
-        taskBoard[2].text = watchTV + $"{(tasksStatus[watchTV] ? " V" : " X")}";
-        taskBoard[3].text = creditCardEntered + $"{(tasksStatus[creditCardEntered] ? " V" : " X")}";
-        taskBoard[4].text = $"{(tasksStatus[watchTV] ? openWindows + (tasksStatus[openWindows] ? " V" : " X") : "?")}";
-        taskBoard[5].text = $"{(tasksStatus[openTaxiApp] ? safeOpened + (tasksStatus[safeOpened] ? " V" : " X") : "?")}";
+        taskBoard[0].text = localizedBoardText[foodEaten] + $"{(tasksStatus[foodEaten] ? " V" : " X")}";
+        taskBoard[1].text = localizedBoardText[catFed] + $"{(tasksStatus[catFed] ? " V" : " X")}";
+        taskBoard[2].text = localizedBoardText[watchTV] + $"{(tasksStatus[watchTV] ? " V" : " X")}";
+        taskBoard[3].text = localizedBoardText[creditCardEntered] + $"{(tasksStatus[creditCardEntered] ? " V" : " X")}";
+        taskBoard[4].text = $"{(tasksStatus[watchTV] ? localizedBoardText[openWindows] + (tasksStatus[openWindows] ? " V" : " X") : "?")}";
+        taskBoard[5].text = $"{(tasksStatus[openTaxiApp] ? localizedBoardText[safeOpened] + (tasksStatus[safeOpened] ? " V" : " X") : "?")}";
     }
 
     public void SafeOpen()
     {
         tasksStatus[safeOpened] = true;
-        taskBoard[5].text = safeOpened + " V";
+        taskBoard[5].text = localizedBoardText[safeOpened] + " V";
     }
 
     public void CreditCardEntered()
     {
         tasksStatus[creditCardEntered] = true;
-        taskBoard[3].text = creditCardEntered + " V";
+        taskBoard[3].text = localizedBoardText[creditCardEntered] + " V";
     }
 
     public void TaxiAppOpened()
     {
         tasksStatus[openTaxiApp] = true;
-        taskBoard[5].text = safeOpened + $"{(tasksStatus[safeOpened] ? " V" : " X")}";
+        taskBoard[5].text = localizedBoardText[safeOpened] + $"{(tasksStatus[safeOpened] ? " V" : " X")}";
     }
 
 
@@ -95,7 +100,7 @@ public class TasksScript : MonoBehaviour
     {   if (foodCount == foodMax)
         {
             tasksStatus[foodEaten] = true;
-            taskBoard[0].text = foodEaten + " V";
+            taskBoard[0].text = localizedBoardText[foodEaten] + " V";
         }
         else
             foodCount++;
@@ -104,14 +109,14 @@ public class TasksScript : MonoBehaviour
     public void CatFed()
     {
         tasksStatus[catFed] = true;
-        taskBoard[1].text = catFed + " V";
+        taskBoard[1].text = localizedBoardText[catFed] + " V";
     }
 
     public void WatchTV()
     {
         tasksStatus[watchTV] = true;
         taskBoard[2].text = watchTV + " V";
-        taskBoard[4].text = openWindows + $"{(tasksStatus[openWindows]? " V" : " X")}";
+        taskBoard[4].text = localizedBoardText[openWindows] + $"{(tasksStatus[openWindows]? " V" : " X")}";
     }
 
     public void WindowOpen()
@@ -130,7 +135,7 @@ public class TasksScript : MonoBehaviour
     {
         if(openedWindows >= 2)
         {
-            taskBoard[4].text = openWindows + " V";
+            taskBoard[4].text = localizedBoardText[openWindows] + " V";
             tasksStatus[openWindows] = true;
         }
     }

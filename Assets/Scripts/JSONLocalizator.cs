@@ -16,11 +16,13 @@ public class JSONLocalizator : MonoBehaviour
 
     public List<TextMeshProUGUI> localizableObjectsText;
     public Dictionary<string, string> localizedText;
+    public Dictionary<string, string> localizedBoard;
 
     private const string englishLocalizationFileName = "EnglishLocalization.json";
     private const string russianLocalizationFileName = "RussianLocalization.json";
 
     private string activeLocalizationFileName;
+    private string activeLocalizationBoardFileName;
 
     private string currentSceneName;
 
@@ -60,6 +62,7 @@ public class JSONLocalizator : MonoBehaviour
         InitializeLocalizationFileName();
 
         localizedText = new Dictionary<string, string>();
+        localizedBoard = new Dictionary<string, string>();
 
         InitializeTextFields();
 
@@ -72,9 +75,15 @@ public class JSONLocalizator : MonoBehaviour
     public void InitializeLocalizationFileName()
     {
         if (isEnglish)
+        {
             activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
+            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + englishLocalizationFileName;
+        }
         else
+        {
             activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
+            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + russianLocalizationFileName;
+        }            
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -102,6 +111,7 @@ public class JSONLocalizator : MonoBehaviour
     public void LoadLocalizationData()
     {
         localizedText = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(activeLocalizationFileName));
+        localizedBoard = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(activeLocalizationBoardFileName));
     }
 
     public void LoadLocalizationOnUI()
