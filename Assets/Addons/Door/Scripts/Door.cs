@@ -33,8 +33,13 @@ public class Door : MonoBehaviour, IInteract
         TasksScript.OnTasksFinished += openLock;
     }
 
-    public string ShowHint()
-        => "Открыть";
+    public string ShowHint(bool isEnglish)
+    {
+        if (isEnglish)
+            return "Open";
+        else
+            return "Открыть";
+    }
 
     public void ToInteract()
     {

@@ -23,12 +23,22 @@ public class WindowInteract : MonoBehaviour, IInteract
         breakableWindow = GetComponent<BreakableWindow>();
     }
 
-    public string ShowHint()
+    public string ShowHint(bool isEnglish)
     {
         if (!isOpen)
-            return "Открыть окно";
+        {
+            if (isEnglish)
+                return "Open Window";
+            else
+                return "Открыть окно";
+        }
         else
-            return "Закрыть окно";
+        {
+            if (isEnglish)
+                return "Close Window";
+            else
+                return "Закрыть окно";
+        }
     }
 
     public void ToInteract()

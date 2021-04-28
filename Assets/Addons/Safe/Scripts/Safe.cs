@@ -38,12 +38,22 @@ public class Safe : MonoBehaviour, IInteract
 
     public static event Action OnSafeOpened;
 
-    public string ShowHint()
+    public string ShowHint(bool isEnglish)
     {
         if (!isOpen)
-            return "¬вести пароль";
+        {
+            if(isEnglish)
+                return "Input password";
+            else
+                return "¬вести пароль";
+        }
         else
-            return "ќткрыть сейф";
+        {
+            if (isEnglish)
+                return "Open safe";
+            else
+                return "ќткрыть сейф";
+        }
     }
 
     public void SwitchCanvasEnabled()

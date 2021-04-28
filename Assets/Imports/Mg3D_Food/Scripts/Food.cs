@@ -13,8 +13,13 @@ public class Food : MonoBehaviour, IInteract
 
     public static event Action onEaten;
 
-    public string ShowHint()
-        => $"ׁתוסעü {foodName}";
+    public string ShowHint(bool isEnglish)
+    {
+        if(isEnglish)
+            return $"Eat {foodName}";
+        else
+            return $"ׁתוסעü {foodName}";
+    }
 
     public void ToInteract()
     {

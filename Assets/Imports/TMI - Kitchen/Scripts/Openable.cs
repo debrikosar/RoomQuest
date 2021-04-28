@@ -14,8 +14,13 @@ public class Openable : MonoBehaviour, IInteract
         animator = GetComponentInParent<Animator>();    
     }
 
-    public string ShowHint()
-        => "Открыть";
+    public string ShowHint(bool isEnglish)
+    {
+        if (isEnglish)
+            return "Open";
+        else 
+            return "Открыть";
+    }
 
     public void ToInteract()
     {

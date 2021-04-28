@@ -17,9 +17,13 @@ public class InteractRaycast : MonoBehaviour
 
     TextMeshProUGUI hintText;
 
+    bool isEnglish;
+
+
     public void Start()
     {
         hintText = hintCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        isEnglish = GameObject.FindGameObjectWithTag("LocalizationManager").GetComponent<JSONLocalizator>().isEnglish;
     }
 
     void Update()
@@ -34,7 +38,7 @@ public class InteractRaycast : MonoBehaviour
             if (selectedItem != null)
             {
                 hintCanvas.enabled = true;
-                hintText.text = selectedItem.ShowHint();
+                hintText.text = selectedItem.ShowHint(isEnglish);
 
                 if (Input.GetKeyDown(KeyCode.E))
                     selectedItem.ToInteract();
