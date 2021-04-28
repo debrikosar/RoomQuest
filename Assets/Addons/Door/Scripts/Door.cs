@@ -65,7 +65,6 @@ public class Door : MonoBehaviour, IInteract
     public void openLock()
     {
         isLocked = false;
-        Debug.Log("hello");
     }
 
     private void OnDestroy()

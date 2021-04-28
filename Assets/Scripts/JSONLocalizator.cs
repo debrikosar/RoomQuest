@@ -17,6 +17,7 @@ public class JSONLocalizator : MonoBehaviour
     public List<TextMeshProUGUI> localizableObjectsText;
     public Dictionary<string, string> localizedText;
     public Dictionary<string, string> localizedBoard;
+    public Dictionary<string, string> localizedHints;
 
     private const string englishLocalizationFileName = "EnglishLocalization.json";
     private const string russianLocalizationFileName = "RussianLocalization.json";
