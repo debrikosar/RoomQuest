@@ -1,8 +1,10 @@
 {
+  "MpButtonText": "Multiplayer",
   "Notification": "All your save files will be deleted! You sure mate?",
   "DeleteSavesButtonText": "Delete saves",
   "MusicLabel": "Music",
   "SoundLabel": "Sound",
+  "EmptyText": "",
   "DeclineButtonText": "Nope",
   "ConfirmButtonText": "Yep",
   "SwitchToRuEng": "Ru",
@@ -12,5 +14,8 @@
   "SettingsTitle": "Settings",
   "CloseSettingsButtonText": "Close",
   "ExitButtonText": "Exit",
+  "CloseMpButtonText": "Close\n",
+  "JoinRoomButtonText": "Join Room",
+  "CreateRoomButtonText": "Create room",
   "SwitchToEngText": "Eng"
 }
