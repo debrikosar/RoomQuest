@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class MenuScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void CloseGame() => Application.Quit();
+    public void CloseGame() => SceneManager.LoadScene("MainMenu");
 
     public void SaveGame()
     {

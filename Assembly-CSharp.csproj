@@ -246,6 +246,7 @@
     <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\GroundCheck.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+    <Compile Include="Assets\Scripts\MpMenuScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Addons\Laptop\StandardColorMask.shader" />
