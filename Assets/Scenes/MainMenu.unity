@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnglish: 1
-  isEditing: 1
+  isEditing: 0
   localizableObjectsText: []
 --- !u!4 &1010411096
 Transform:

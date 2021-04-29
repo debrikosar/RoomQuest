@@ -1,8 +1,10 @@
 {
+  "MpButtonText": "Мультиплеер",
   "Notification": "Все твои сохранения будут удалены! Уверен, приятель?",
   "DeleteSavesButtonText": "Удалить сохранения",
   "MusicLabel": "Музыка",
   "SoundLabel": "Звук",
+  "EmptyText": "",
   "DeclineButtonText": "Неа",
   "ConfirmButtonText": "Ага",
   "SwitchToRuEng": "Рус",
@@ -12,5 +14,8 @@
   "SettingsTitle": "Настройки",
   "CloseSettingsButtonText": "Закрыть",
   "ExitButtonText": "Выход",
+  "CloseMpButtonText": "Закрыть\n",
+  "JoinRoomButtonText": "Присоединиться к комнате",
+  "CreateRoomButtonText": "Создать комнату",
   "SwitchToEngText": "Англ"
 }
