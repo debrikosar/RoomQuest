@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
 
     public GameObject mainMenu;
     public GameObject settingsMenu;
+    public GameObject mpMenu;
 
     public GameObject bedroomMenu;
     public GameObject bathroomMenu;
@@ -91,6 +92,29 @@ public class MainMenuScript : MonoBehaviour
         StartCoroutine("UnFadeScreen");
     }
 
+    IEnumerator SwitchToMultiplayer()
+    {
+        yield return StartCoroutine("FadeScreen");
+
+        mpMenu.SetActive(mpMenu.activeSelf ? false : true);
+        mainMenu.SetActive(mpMenu.activeSelf ? false : true);
+        bathroomMenu.SetActive(mpMenu.activeSelf ? true : false);
+        bedroomMenu.SetActive(mpMenu.activeSelf ? false : true);
+
+        if (isMeowing)
+        {
+            StopCoroutine("MenuCatMeow");
+            isMeowing = false;
+        }
+        else
+        {
+            StartCoroutine("MenuCatMeow");
+            catAnimator.Play("sitting");
+        }
+
+        StartCoroutine("UnFadeScreen");
+    }
+
     IEnumerator FadeScreen()
     {
         fadeScreen.SetActive(true);
@@ -138,6 +162,8 @@ public class MainMenuScript : MonoBehaviour
     public void CloseGame() => Application.Quit();
 
     public void SummonSettings() => StartCoroutine(SwitchMenus());
+
+    public void SummonMp() => StartCoroutine(SwitchToMultiplayer());
 
     public void StartGame() => StartCoroutine(SwitchSceneToMain());
 }

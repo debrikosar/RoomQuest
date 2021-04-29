@@ -8,13 +8,11 @@ public class SaveData
 {
     public List<Task> tasksInfo;
     public Dictionary<string, MovableObject> movableObjectsInfo;
-    public Dictionary<string, bool> tasksProgress;
 
     public SaveData()
     {
         tasksInfo = new List<Task>();
         movableObjectsInfo = new Dictionary<string, MovableObject>();
-        tasksProgress = new Dictionary<string, bool>();
     }
 
     public void RecordMovableObjects(List <GameObject> trackedMovableObjects)
@@ -24,8 +22,8 @@ public class SaveData
             movableObjectsInfo.Add(trackedMovableObject.name, new MovableObject(trackedMovableObject.transform.position, trackedMovableObject.transform.rotation));
     }
 
-    public void RecordTaks(Dictionary<string, bool> tasksProgress)
+    public void RecordTaks(List<Task> tasks)
     {
-        this.tasksProgress = tasksProgress;
+        tasksInfo = tasks;
     }
 }
