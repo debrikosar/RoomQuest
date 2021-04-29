@@ -77,13 +77,13 @@ public class JSONLocalizator : MonoBehaviour
     {
         if (isEnglish)
         {
-            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
-            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + englishLocalizationFileName;
+            activeLocalizationFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
+            activeLocalizationBoardFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/Board" + englishLocalizationFileName;
         }
         else
         {
-            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
-            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + russianLocalizationFileName;
+            activeLocalizationFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
+            activeLocalizationBoardFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/Board" + russianLocalizationFileName;
         }            
     }
 
