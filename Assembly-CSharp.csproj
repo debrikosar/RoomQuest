@@ -62,6 +62,7 @@
     <Compile Include="Assets\Addons\TV\Scripts\ButtonTV.cs" />
     <Compile Include="Assets\Addons\TV\Scripts\OutputRemoteTV.cs" />
     <Compile Include="Assets\Addons\Laptop\Scripts\Laptop.cs" />
+    <Compile Include="Assets\Scripts\TasksScript.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\FirstPersonMovement.cs" />
     <Compile Include="Assets\Scripts\DayNight.cs" />
     <Compile Include="Assets\Addons\PlayerController\Scripts\Components\Zoom.cs" />

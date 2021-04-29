@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,29 +14,44 @@ public class WindowInteract : MonoBehaviour, IInteract
     public BreakableWindow breakableWindow;
     public UnityEvent onBehaviourChanged;
 
+    public static event Action onWindowOpen;
+    public static event Action onWindowClose;
+
     public void Start()
     {
         anim = GetComponentInParent<Animator>();
         breakableWindow = GetComponent<BreakableWindow>();
     }
 
-    public string ShowHint()
+    public string ShowHint(bool isEnglish)
     {
         if (!isOpen)
-            return "Открыть окно";
+        {
+            if (isEnglish)
+                return "Open Window";
+            else
+                return "Открыть окно";
+        }
         else
-            return "Закрыть окно";
+        {
+            if (isEnglish)
+                return "Close Window";
+            else
+                return "Закрыть окно";
+        }
     }
 
     public void ToInteract()
     {
         if (isOpen)
         {
+            onWindowClose?.Invoke();
             anim.SetTrigger("Close");
             isOpen = false;
         }
         else
         {
+            onWindowOpen?.Invoke();
             anim.SetTrigger("Open");
             isOpen = true;
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +16,9 @@ public class TaxiUI : MonoBehaviour
     private string correctInfoText = "Такси успешно заказано!";
     private string uncorrectInfoText = "Данные карты введены неверно!" ;
 
+    public static event Action OnCorrectPasswordInput;
+    public static event Action OnTaxiAppOpened;
+
     public void Start()
     {
         
@@ -22,6 +26,7 @@ public class TaxiUI : MonoBehaviour
 
     public void IconButtonClick()
     {
+        OnTaxiAppOpened?.Invoke();
         this.gameObject.SetActive(true);
         if (isSomethingSaved)
             for (var i = 0; i < savedInputFieldsData.Length; i++)
@@ -67,6 +72,7 @@ public class TaxiUI : MonoBehaviour
 
     public void TaskCompleted()
     {
+        OnCorrectPasswordInput?.Invoke();
         Debug.Log("Задание выполнено");
     }
 }

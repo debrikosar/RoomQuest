@@ -6,5 +6,5 @@ public interface IInteract
 {
     public void ToInteract();
 
-    public string ShowHint();
+    public string ShowHint(bool isEnglish);
 }

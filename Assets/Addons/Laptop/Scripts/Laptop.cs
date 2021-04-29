@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,6 +88,11 @@ public class Laptop : MonoBehaviour, IInteract
         DesktopCanvas.enabled = false;
     }
 
-    public string ShowHint()
-        => "Сесть за компьютер";
+    public string ShowHint(bool isEnglish)
+    {
+        if(isEnglish)
+            return "Use Computer";
+        else
+            return "Сесть за компьютер";
+    }
 }

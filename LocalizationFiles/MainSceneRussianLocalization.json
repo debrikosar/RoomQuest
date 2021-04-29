@@ -5,12 +5,14 @@
   "Text (8)": "8",
   "CardCvvInputText": "​",
   "PlaceholderNumber": "",
+  "OkCoolText": "Ok, Cool",
   "Text (1)": "1",
-  "TimeText": "0:14:38",
+  "TimeText": "0:14:48",
   "PlaceholderCvv": "",
   "Text (0)": "0",
   "OffButtonText": "Button",
-  "HintText": "Нажать кнопку питания",
+  "GameSavedText": "Game Saved",
+  "HintText": "",
   "Text (7)": "7",
   "SaveButtonText": "Сохранить введённые данные",
   "Text (6)": "6",
@@ -21,6 +23,6 @@
   "Text (9)": "9",
   "Text (2)": "2",
   "InfoText": "",
-  "MenuQuitButtonText": "Выйти",
-  "MenuSaveButtonText": "Сохраниться"
+  "MenuQuitButtonText": "Quit",
+  "MenuSaveButtonText": "Save"
 }

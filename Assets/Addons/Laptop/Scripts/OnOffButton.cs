@@ -7,8 +7,13 @@ public class OnOffButton : MonoBehaviour, IInteract
     [SerializeField]
     private Canvas desktopCanvas;
 
-    public string ShowHint()
-        => "Нажать кнопку питания";
+    public string ShowHint(bool isEnglish)
+    {
+        if(isEnglish)
+            return "Press Power Button";
+        else
+            return "Нажать кнопку питания";
+    }
 
     public void ToInteract()
     {

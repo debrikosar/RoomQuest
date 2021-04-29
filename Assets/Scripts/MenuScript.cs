@@ -10,11 +10,15 @@ public class MenuScript : MonoBehaviour
     GameObject gameMenu;
     [SerializeField]
     GameObject playerControl;
+    [SerializeField]
+    GameObject SaveConfirmationPanel;
 
     [SerializeField]
     List <GameObject> trackedMovableObjects;
     [SerializeField]
-    List<GameObject> trackedTasks;
+    GameObject TaskManager;
+
+    private TasksScript tasksScript;
 
     private SaveData saveData;
     private SaveData loadData;
@@ -23,6 +27,8 @@ public class MenuScript : MonoBehaviour
 
     void Awake()
     {
+        tasksScript = TaskManager.GetComponent<TasksScript>();
+
         saveData = new SaveData();
         if (File.Exists(Application.persistentDataPath + saveFileName))
             LoadGame();
@@ -57,9 +63,14 @@ public class MenuScript : MonoBehaviour
 
     public void SaveGame()
     {
+        SaveConfirmationPanel.SetActive(true);
+        saveData.RecordTaks(tasksScript.tasksStatus);
         saveData.RecordMovableObjects(trackedMovableObjects);
         File.WriteAllText(Application.persistentDataPath + saveFileName, JsonConvert.SerializeObject(saveData, Formatting.Indented));
     }
+
+    public void CloseSaveConfirmationPanel() =>
+        SaveConfirmationPanel.SetActive(false);
 
     public void LoadGame()
     {
@@ -75,5 +86,7 @@ public class MenuScript : MonoBehaviour
                 loadData.movableObjectsInfo[trackedMovableObject.name].objectRotationZ,
                 loadData.movableObjectsInfo[trackedMovableObject.name].objectRotationW);
         }
+
+        tasksScript.tasksStatus = loadData.tasksProgress;
     }
 }

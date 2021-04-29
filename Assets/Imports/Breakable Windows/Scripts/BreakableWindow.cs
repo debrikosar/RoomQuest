@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 [AddComponentMenu("Breakable Windows/Breakable Window")]
 [RequireComponent(typeof(AudioSource))]
@@ -47,6 +49,8 @@ public class BreakableWindow : MonoBehaviour {
     private bool allreadyCalculated = false;
     private GameObject splinterParent;
     int[] tris;
+
+    public static event Action onWindowBreak;
 
     void Start()
     {
@@ -222,7 +226,7 @@ public class BreakableWindow : MonoBehaviour {
             Destroy(GetComponent<MeshRenderer>());
             Destroy(GetComponent<MeshFilter>());
 
-            
+            onWindowBreak?.Invoke();
             isBroken = true;
             onBroke?.Invoke();
         }

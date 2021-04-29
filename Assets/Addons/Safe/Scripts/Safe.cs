@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,12 +36,24 @@ public class Safe : MonoBehaviour, IInteract
     [SerializeField]
     private string rigthInputCode = "1234";
 
-    public string ShowHint()
+    public static event Action OnSafeOpened;
+
+    public string ShowHint(bool isEnglish)
     {
         if (!isOpen)
-            return "¬вести пароль";
+        {
+            if(isEnglish)
+                return "Input password";
+            else
+                return "¬вести пароль";
+        }
         else
-            return "ќткрыть сейф";
+        {
+            if (isEnglish)
+                return "Open safe";
+            else
+                return "ќткрыть сейф";
+        }
     }
 
     public void SwitchCanvasEnabled()
@@ -60,7 +73,10 @@ public class Safe : MonoBehaviour, IInteract
         if (isLocked)
             SwitchCanvasEnabled();
         else
+        {
             Open();
+            OnSafeOpened?.Invoke();
+        }
     }
 
     public void Open()
@@ -85,7 +101,9 @@ public class Safe : MonoBehaviour, IInteract
     public void OpenButtonPressed()
     {
         if (userInputCode == rigthInputCode)
+        {
             isLocked = false;
+        }
         userInputCode = default;
 
         SwitchCanvasEnabled();
