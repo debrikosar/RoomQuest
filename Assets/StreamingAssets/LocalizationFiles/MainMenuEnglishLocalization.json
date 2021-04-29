@@ -1,4 +1,5 @@
 {
+  "MultiplayerTitle": "Multiplayer",
   "MpButtonText": "Multiplayer",
   "Notification": "All your save files will be deleted! You sure mate?",
   "DeleteSavesButtonText": "Delete saves",
@@ -17,5 +18,6 @@
   "SettingsTitle": "Settings",
   "CloseSettingsButtonText": "Close",
   "ExitButtonText": "Exit",
-  "SwitchToEngText": "Eng"
+  "SwitchToEngText": "Eng",
+  "HintText": ""
 }

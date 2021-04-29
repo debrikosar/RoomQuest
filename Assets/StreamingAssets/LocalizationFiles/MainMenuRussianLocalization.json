@@ -1,12 +1,16 @@
 {
+  "MultiplayerTitle": "Мультиплеер",
   "MpButtonText": "Мультиплеер",
   "Notification": "Все твои сохранения будут удалены! Уверен, приятель?",
   "DeleteSavesButtonText": "Удалить сохранения",
   "MusicLabel": "Музыка",
   "SoundLabel": "Звук",
-  "LogText": "",
   "DeclineButtonText": "Неа",
   "ConfirmButtonText": "Ага",
+  "JoinRoomButtonText": "Присоединиться",
+  "CloseMpButtonText": "Закрыть\n",
+  "LogText": "",
+  "CreateRoomButtonText": "Создать комнату",
   "SwitchToRuEng": "Рус",
   "PlayButtonText": "Играть",
   "GameTitle": "Домоквест",
@@ -14,8 +18,6 @@
   "SettingsTitle": "Настройки",
   "CloseSettingsButtonText": "Закрыть",
   "ExitButtonText": "Выход",
-  "CloseMpButtonText": "Закрыть\n",
-  "JoinRoomButtonText": "Присоединиться к комнате",
-  "CreateRoomButtonText": "Создать комнату",
-  "SwitchToEngText": "Англ"
+  "SwitchToEngText": "Англ",
+  "HintText": ""
 }
