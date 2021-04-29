@@ -119,7 +119,8 @@ public class JSONLocalizator : MonoBehaviour
     {
         foreach (TextMeshProUGUI localizableObjectText in localizableObjectsText)
         {
-            localizableObjectText.text = localizedText[localizableObjectText.name];
+            if (localizableObjectText.name != "HintText" && localizableObjectText.name != "Placeholder" && localizableObjectText.name != "TimeText")
+                localizableObjectText.text = localizedText[localizableObjectText.name];
         }
     }
 
@@ -134,7 +135,8 @@ public class JSONLocalizator : MonoBehaviour
 
         foreach (TextMeshProUGUI localizableObjectText in localizableObjectsText)
         {
-            localizedText.Add(localizableObjectText.name, localizableObjectText.text);
+            if(localizableObjectText.name != "HintText" && localizableObjectText.name != "Placeholder" && localizableObjectText.name != "TimeText")
+                localizedText.Add(localizableObjectText.name, localizableObjectText.text);
         }
     }
 

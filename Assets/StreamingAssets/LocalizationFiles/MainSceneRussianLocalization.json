@@ -5,13 +5,13 @@
   "Text (8)": "8",
   "CardCvvInputText": "​",
   "PlaceholderNumber": "",
-  "OkCoolText": "Ok, Cool",
+  "OkCoolText": "Ок, клево",
   "Text (1)": "1",
   "TimeText": "0:14:48",
   "PlaceholderCvv": "",
   "Text (0)": "0",
-  "OffButtonText": "Button",
-  "GameSavedText": "Game Saved",
+  "OffButtonText": "",
+  "GameSavedText": "Игра сохранена",
   "HintText": "",
   "Text (7)": "7",
   "SaveButtonText": "Сохранить введённые данные",
@@ -23,6 +23,6 @@
   "Text (9)": "9",
   "Text (2)": "2",
   "InfoText": "",
-  "MenuQuitButtonText": "Quit",
-  "MenuSaveButtonText": "Save"
+  "MenuQuitButtonText": "Выйти",
+  "MenuSaveButtonText": "Сохранить"
 }
