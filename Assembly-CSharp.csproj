@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3D2D5B61-CDC9-CBE3-2203-280FE398F9FF}</ProjectGuid>
+    <ProjectGuid>{68FCAE42-125F-26AD-DD23-B44F37105EB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -894,15 +894,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{BBF4F785-7E21-F8B0-D011-3DA45A12BC77}</Project>
+      <Project>{1893CD8E-8571-1C09-9BF7-5F5E5D4A50F0}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{B98BB61F-5CD7-FBDF-9632-B18D46605AF6}</Project>
+      <Project>{42CBB137-FBB8-0A8D-EC74-BF6C75A1856B}</Project>
       <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{27A348EB-5755-B099-77CB-2B44029DDF89}</Project>
+      <Project>{56596E1E-9D04-4169-68B5-C5ED63810108}</Project>
       <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
