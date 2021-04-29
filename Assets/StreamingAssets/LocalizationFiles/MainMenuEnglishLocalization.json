@@ -4,9 +4,12 @@
   "DeleteSavesButtonText": "Delete saves",
   "MusicLabel": "Music",
   "SoundLabel": "Sound",
-  "EmptyText": "",
   "DeclineButtonText": "Nope",
   "ConfirmButtonText": "Yep",
+  "JoinRoomButtonText": "Join Room",
+  "CloseMpButtonText": "Close\n",
+  "LogText": "",
+  "CreateRoomButtonText": "Create room",
   "SwitchToRuEng": "Ru",
   "PlayButtonText": "Play",
   "GameTitle": "Room Quest",
@@ -14,8 +17,5 @@
   "SettingsTitle": "Settings",
   "CloseSettingsButtonText": "Close",
   "ExitButtonText": "Exit",
-  "CloseMpButtonText": "Close\n",
-  "JoinRoomButtonText": "Join Room",
-  "CreateRoomButtonText": "Create room",
   "SwitchToEngText": "Eng"
 }
