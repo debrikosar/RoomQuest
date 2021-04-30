@@ -11,7 +11,7 @@ public class TaxiUI : MonoBehaviour
     private string[] savedInputFieldsData;
 
     private bool isSomethingSaved;
-    private string correctInputs = "123123";
+    public string correctInputs = "1307588017";
 
     private string correctInfoText = "Такси успешно заказано!";
     private string uncorrectInfoText = "Данные карты введены неверно!" ;
