@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 2282254292757254738}
   - component: {fileID: 7476614785222514817}
   m_Layer: 0
-  m_Name: PcForMP (2)
+  m_Name: PcForMP
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,8 +617,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 91812df0536f1a14cb9259ef7f5c7e68, type: 2}
+  m_sharedMaterial: {fileID: -4168915101715046953, guid: 91812df0536f1a14cb9259ef7f5c7e68, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
