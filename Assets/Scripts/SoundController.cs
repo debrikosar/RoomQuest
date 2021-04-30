@@ -6,31 +6,38 @@ using UnityEngine.SceneManagement;
 
 public class SoundController : MonoBehaviour
 {
-    private static SoundController instance;
     private AudioSource[] soundSources;
 
     public float soundVolume;
 
-    void Start()
+    private static SoundController _instance;
+
+    void Awake()
     {
-        if (instance == null)
+        if (!_instance)
+            _instance = this;
+        else
         {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
+            soundVolume = _instance.soundVolume;
+            Destroy(_instance.gameObject);
+            _instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
 
-        FindAllSoundSources();
-        ChangeVolumeOfAllSoundSources();
+        if (PlayerPrefs.HasKey("Sound Volume"))
+            soundVolume = PlayerPrefs.GetFloat("Sound Volume");
+        InitializeSounds();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        InitializeSounds();
+    }
+
+    public void InitializeSounds()
     {
         FindAllSoundSources();
         ChangeVolumeOfAllSoundSources();
@@ -43,7 +50,14 @@ public class SoundController : MonoBehaviour
 
     public void ChangeVolumeOfAllSoundSources()
     {
-        foreach (AudioSource soundSource in soundSources.Where(soundSource => soundSource.name != "BackgroundMusic"))
-            soundSource.volume = soundVolume;
+        PlayerPrefs.SetFloat("Sound Volume", soundVolume);
+        foreach (AudioSource soundSource in soundSources)
+            if (soundSource != null && soundSource.name != "BackgroundMusic")
+                soundSource.volume = soundVolume;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class BackgroundMusicScript : MonoBehaviour
 {
-    private static bool isExisting;
+    private static BackgroundMusicScript _instance;
 
-    public void Awake()
+    void Awake()
     {
-        if (isExisting)
+        if (!_instance)
+            _instance = this;
+        else
         {
-            Destroy(this.gameObject);
+            this.gameObject.GetComponent<AudioSource>().volume = _instance.gameObject.GetComponent<AudioSource>().volume;
+            Destroy(_instance.gameObject);
+            _instance = this;
         }
 
         DontDestroyOnLoad(this.gameObject);
 
-        isExisting = true;
+
+        if (PlayerPrefs.HasKey("Music Volume"))
+            this.gameObject.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Music Volume");
     }
 }

@@ -52,16 +52,23 @@ public class Laptop : MonoBehaviour, IInteract
             speed = 3;
         }
         else
-            speed = 15;
-            
+            speed = 10;
+
         isCameraZoom = !isCameraZoom;
-        while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 0.1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 0.1f)
+        while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 1f)
         {
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, ZoomTo.position, speed * Time.deltaTime);
             gameCamera.transform.rotation = Quaternion.Lerp(gameCamera.transform.rotation, ZoomTo.rotation, speed * Time.deltaTime);
 
             yield return new WaitForEndOfFrame();          
         }
+
+        if (!isCameraZoom)
+        {
+            gameCamera.transform.position = cameraTransformData.transform.position;
+            gameCamera.transform.rotation = cameraTransformData.transform.rotation; 
+        }
+
         StopCoroutine(startedCoroutine);
     }
 
@@ -81,6 +88,7 @@ public class Laptop : MonoBehaviour, IInteract
         else
             Cursor.lockState = CursorLockMode.Locked;
     }
+
 
     public void OffButtonClick()
     {

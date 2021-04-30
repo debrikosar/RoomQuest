@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
     [SerializeField]
     GameObject gameMenu;
     [SerializeField]
-    GameObject playerControl;
+    GameObject saveConfirmaton;
     [SerializeField]
-    GameObject SaveConfirmationPanel;
+    GameObject playerControl;
 
     [SerializeField]
     List <GameObject> trackedMovableObjects;
@@ -22,6 +23,7 @@ public class MenuScript : MonoBehaviour
 
     private SaveData saveData;
     private SaveData loadData;
+
 
     private const string saveFileName = "/SaveData.json";
 
@@ -59,18 +61,17 @@ public class MenuScript : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void CloseGame() => Application.Quit();
+    public void CloseGame() => SceneManager.LoadScene("MainMenu");
 
     public void SaveGame()
     {
-        SaveConfirmationPanel.SetActive(true);
+        saveConfirmaton.SetActive(true);
         saveData.RecordTaks(tasksScript.tasksStatus);
         saveData.RecordMovableObjects(trackedMovableObjects);
         File.WriteAllText(Application.persistentDataPath + saveFileName, JsonConvert.SerializeObject(saveData, Formatting.Indented));
     }
 
-    public void CloseSaveConfirmationPanel() =>
-        SaveConfirmationPanel.SetActive(false);
+    public void CloseConfirmation() => saveConfirmaton.SetActive(false);
 
     public void LoadGame()
     {

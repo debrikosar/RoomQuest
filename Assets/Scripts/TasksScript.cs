@@ -2,10 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TasksScript : MonoBehaviour
 {
+    [SerializeField]
+    GameObject endGameInfo;
+
+    [SerializeField]
+    GameObject fadePanel;
+    Image fadePanelImage;
+
+    [SerializeField]
+    GameObject playerControl;
+
     public Dictionary<string, bool> tasksStatus = new Dictionary<string, bool>();
 
     public Text[] taskBoard;
@@ -30,6 +41,7 @@ public class TasksScript : MonoBehaviour
 
     private void Start()
     {
+        fadePanelImage = fadePanel.GetComponent<Image>();
         localizedBoardText = GameObject.FindGameObjectWithTag("LocalizationManager").GetComponent<JSONLocalizator>().localizedBoard;
         taskBoard[6].text = localizedBoardText["Tasks"];
 
@@ -63,8 +75,7 @@ public class TasksScript : MonoBehaviour
             tasksStatus.Add(openWindows, false);
             tasksStatus.Add(openTaxiApp, false);
         }
-        else
-            UpdateFields();
+        UpdateFields();
     }
 
     public void UpdateFields()
@@ -115,7 +126,7 @@ public class TasksScript : MonoBehaviour
     public void WatchTV()
     {
         tasksStatus[watchTV] = true;
-        taskBoard[2].text = watchTV + " V";
+        taskBoard[2].text = localizedBoardText[watchTV] + " V";
         taskBoard[4].text = localizedBoardText[openWindows] + $"{(tasksStatus[openWindows]? " V" : " X")}";
     }
 
@@ -150,7 +161,38 @@ public class TasksScript : MonoBehaviour
             && tasksStatus[openWindows])
         {
             OnTasksFinished?.Invoke();
+            StartCoroutine(FadeScreen());
         }
+    }
+
+    IEnumerator FadeScreen()
+    {
+        if(SceneManager.GetActiveScene().name == "MainScene")
+            SwitchPlayerControl();
+        fadePanel.SetActive(true);
+        for (float alpha = 0f; alpha < 1.0f; alpha += Time.deltaTime)
+        {
+            fadePanelImage.color = new Color(
+                fadePanelImage.color.r,
+                fadePanelImage.color.b,
+                fadePanelImage.color.g,
+                alpha);
+
+            yield return null;
+        }
+
+        endGameInfo.SetActive(true);
+    }
+
+    public void SwitchPlayerControl()
+    {
+        playerControl.GetComponent<PlayerControl>().enabled = !playerControl.GetComponent<PlayerControl>().enabled;
+        Cursor.visible = !Cursor.visible;
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDestroy()

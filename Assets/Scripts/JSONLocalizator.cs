@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class JSONLocalizator : MonoBehaviour
 {
-    private static JSONLocalizator instance;
-
     public bool isEnglish;
     public bool isEditing;
 
@@ -27,18 +25,24 @@ public class JSONLocalizator : MonoBehaviour
 
     private string currentSceneName;
 
+    private static JSONLocalizator _instance;
+
     void Awake()
     {
-        if (instance == null)
+        if (!_instance)
+            _instance = this;
+        else
         {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
+            isEnglish = _instance.isEnglish;
+            Destroy(_instance.gameObject);
+            _instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
+
+        DontDestroyOnLoad(this.gameObject);
+
+        if (PlayerPrefs.HasKey("LocalizationPref"))
+            isEnglish = PlayerPrefs.GetInt("LocalizationPref") == 1? true : false;
 
         InitializeLocalizator();
 
@@ -77,13 +81,13 @@ public class JSONLocalizator : MonoBehaviour
     {
         if (isEnglish)
         {
-            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
-            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + englishLocalizationFileName;
+            activeLocalizationFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/" + currentSceneName + englishLocalizationFileName;
+            activeLocalizationBoardFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/Board" + englishLocalizationFileName;
         }
         else
         {
-            activeLocalizationFileName = Environment.CurrentDirectory + "/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
-            activeLocalizationBoardFileName = Environment.CurrentDirectory + "/LocalizationFiles/Board" + russianLocalizationFileName;
+            activeLocalizationFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/" + currentSceneName + russianLocalizationFileName;
+            activeLocalizationBoardFileName = Application.dataPath + "/StreamingAssets/LocalizationFiles/Board" + russianLocalizationFileName;
         }            
     }
 
@@ -119,7 +123,8 @@ public class JSONLocalizator : MonoBehaviour
     {
         foreach (TextMeshProUGUI localizableObjectText in localizableObjectsText)
         {
-            localizableObjectText.text = localizedText[localizableObjectText.name];
+            if (localizableObjectText.name != "HintText" && localizableObjectText.name != "Placeholder" && localizableObjectText.name != "TimeText")
+                localizableObjectText.text = localizedText[localizableObjectText.name];
         }
     }
 
@@ -134,7 +139,8 @@ public class JSONLocalizator : MonoBehaviour
 
         foreach (TextMeshProUGUI localizableObjectText in localizableObjectsText)
         {
-            localizedText.Add(localizableObjectText.name, localizableObjectText.text);
+            if(localizableObjectText.name != "HintText" && localizableObjectText.name != "Placeholder" && localizableObjectText.name != "TimeText")
+                localizedText.Add(localizableObjectText.name, localizableObjectText.text);
         }
     }
 
@@ -142,6 +148,7 @@ public class JSONLocalizator : MonoBehaviour
     {
         if (this.isEnglish != isEnglish)
         {
+            PlayerPrefs.SetInt("LocalizationPref", isEnglish? 1 : 0);
             this.isEnglish = isEnglish;
             InitializeLocalizationFileName();
             LoadLocalizationFile();

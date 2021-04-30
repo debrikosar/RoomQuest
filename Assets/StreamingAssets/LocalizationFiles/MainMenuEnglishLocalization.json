@@ -1,0 +1,23 @@
+{
+  "MultiplayerTitle": "Multiplayer",
+  "MpButtonText": "Multiplayer",
+  "Notification": "All your save files will be deleted! You sure mate?",
+  "DeleteSavesButtonText": "Delete saves",
+  "MusicLabel": "Music",
+  "SoundLabel": "Sound",
+  "DeclineButtonText": "Nope",
+  "ConfirmButtonText": "Yep",
+  "JoinRoomButtonText": "Join Room",
+  "CloseMpButtonText": "Close\n",
+  "LogText": "",
+  "CreateRoomButtonText": "Create room",
+  "SwitchToRuEng": "Ru",
+  "PlayButtonText": "Play",
+  "GameTitle": "Room Quest",
+  "SettingsButtonText": "Settings",
+  "SettingsTitle": "Settings",
+  "CloseSettingsButtonText": "Close",
+  "ExitButtonText": "Exit",
+  "SwitchToEngText": "Eng",
+  "HintText": ""
+}

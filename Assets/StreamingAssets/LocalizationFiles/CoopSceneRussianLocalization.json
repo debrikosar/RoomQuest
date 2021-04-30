@@ -1,0 +1,23 @@
+{
+  "OrderButtonText": "Заказать такси!",
+  "Button4Text": "4",
+  "Button3Text": "3",
+  "Button8Text": "8",
+  "CardCvvText": "​",
+  "Button1Text": "1",
+  "Button0Text": "0",
+  "OffButtonText": "",
+  "Button7": "7",
+  "SaveButtonText": "Сохранить введённые данные",
+  "Button6Text": "6",
+  "TaxiButtonText": "",
+  "Button5Text": "5",
+  "CardInputText": "​",
+  "OpenButtonText": "Открыть",
+  "Button9Text": "9",
+  "Button2Text": "2",
+  "InfoText": "",
+  "StartAgainButtonText": "Неа, верни меня в меню",
+  "QuitButtonText": "Выйти",
+  "Congratz": "Наконец-то, дверь открыта! Но так ли тебе хочется наружу?"
+}
