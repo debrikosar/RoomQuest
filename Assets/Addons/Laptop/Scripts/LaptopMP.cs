@@ -60,7 +60,7 @@ public class LaptopMP : MonoBehaviour, IInteract
             speed = 10;
             
         isCameraZoom = !isCameraZoom;
-        while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 0.1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 0.1f)
+        while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 1f)
         {
             gameCamera.transform.position = Vector3.Lerp(gameCamera.transform.position, ZoomTo.position, speed * Time.deltaTime);
             gameCamera.transform.rotation = Quaternion.Lerp(gameCamera.transform.rotation, ZoomTo.rotation, speed * Time.deltaTime);
