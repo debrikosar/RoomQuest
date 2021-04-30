@@ -7,12 +7,10 @@
   "PlaceholderNumber": "",
   "OkCoolText": "Ok, Cool",
   "Text (1)": "1",
-  "TimeText": "0:4:36",
   "PlaceholderCvv": "",
   "Text (0)": "0",
   "OffButtonText": "",
   "GameSavedText": "Game Saved",
-  "HintText": "",
   "Text (7)": "7",
   "SaveButtonText": "Save input",
   "Text (6)": "6",
@@ -23,6 +21,8 @@
   "Text (9)": "9",
   "Text (2)": "2",
   "InfoText": "",
+  "Congratz": "The door is finally open! But do you really want to go outside?",
   "MenuQuitButtonText": "Quit",
+  "StartAgainButtonText": "Nah, take me back to the menu",
   "MenuSaveButtonText": "Save"
 }

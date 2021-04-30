@@ -5,7 +5,6 @@
   "Button8Text": "8",
   "CardCvvText": "​",
   "Button1Text": "1",
-  "TimeText": "0:2:43",
   "Button0Text": "0",
   "OffButtonText": "",
   "Button7": "7",
@@ -18,5 +17,7 @@
   "Button9Text": "9",
   "Button2Text": "2",
   "InfoText": "",
-  "QuitButtonText": "Закрыть"
+  "StartAgainButtonText": "Неа, верни меня в меню",
+  "QuitButtonText": "Выйти",
+  "Congratz": "Наконец-то, дверь открыта! Но так ли тебе хочется наружу?"
 }
