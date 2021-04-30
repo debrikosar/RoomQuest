@@ -114,7 +114,7 @@ public class TasksScript : MonoBehaviour
     public void WatchTV()
     {
         tasksStatus[watchTV] = true;
-        taskBoard[2].text = watchTV + " V";
+        taskBoard[2].text = localizedBoardText[watchTV] + " V";
         taskBoard[4].text = localizedBoardText[openWindows] + $"{(tasksStatus[openWindows]? " V" : " X")}";
     }
 

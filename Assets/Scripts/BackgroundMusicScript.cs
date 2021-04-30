@@ -18,5 +18,9 @@ public class BackgroundMusicScript : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+
+        if (PlayerPrefs.HasKey("Music Volume"))
+            this.gameObject.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("Music Volume");
     }
 }

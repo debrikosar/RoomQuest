@@ -41,6 +41,9 @@ public class JSONLocalizator : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
+        if (PlayerPrefs.HasKey("LocalizationPref"))
+            isEnglish = PlayerPrefs.GetInt("LocalizationPref") == 1? true : false;
+
         InitializeLocalizator();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -145,6 +148,7 @@ public class JSONLocalizator : MonoBehaviour
     {
         if (this.isEnglish != isEnglish)
         {
+            PlayerPrefs.SetInt("LocalizationPref", isEnglish? 1 : 0);
             this.isEnglish = isEnglish;
             InitializeLocalizationFileName();
             LoadLocalizationFile();

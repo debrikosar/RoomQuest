@@ -25,6 +25,8 @@ public class SoundController : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
+        if (PlayerPrefs.HasKey("Sound Volume"))
+            soundVolume = PlayerPrefs.GetFloat("Sound Volume");
         InitializeSounds();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -48,6 +50,7 @@ public class SoundController : MonoBehaviour
 
     public void ChangeVolumeOfAllSoundSources()
     {
+        PlayerPrefs.SetFloat("Sound Volume", soundVolume);
         foreach (AudioSource soundSource in soundSources)
             if (soundSource != null && soundSource.name != "BackgroundMusic")
                 soundSource.volume = soundVolume;
