@@ -37,13 +37,9 @@ public class MpMenuScript : MonoBehaviour
 
     public void SwitchPlayerControl()
     {
-        playerControl.GetComponent<PlayerControl>().enabled = !playerControl.GetComponent<PlayerControl>().enabled;
-        Cursor.visible = !Cursor.visible;
-
-        if (Cursor.lockState == CursorLockMode.Locked)
-            Cursor.lockState = CursorLockMode.None;
-        else
-            Cursor.lockState = CursorLockMode.Locked;
+        playerControl.GetComponent<PlayerControl>().enabled = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseGame()

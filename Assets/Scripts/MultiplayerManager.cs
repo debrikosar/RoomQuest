@@ -10,12 +10,15 @@ public class MultiplayerManager : Photon.PunBehaviour
     private void Awake()
     {
         Debug.Log("Joined room");
-        MpPlayer = PhotonNetwork.Instantiate("PcForMP", new Vector3(70, 24, 42), Quaternion.identity, 0);
+        MpPlayer = PhotonNetwork.Instantiate("PcForMP", new Vector3(54.7f, 25.8f, 39.25f), Quaternion.identity, 0);
     }
 
     public void PlayerExit()
     {
         PhotonNetwork.LeaveRoom();
+        MpPlayer.GetComponent<PlayerControl>().enabled = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MainMenu");
     }
 
