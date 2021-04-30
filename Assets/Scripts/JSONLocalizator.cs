@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class JSONLocalizator : MonoBehaviour
 {
-    private static JSONLocalizator instance;
-
     public bool isEnglish;
     public bool isEditing;
 
@@ -27,18 +25,21 @@ public class JSONLocalizator : MonoBehaviour
 
     private string currentSceneName;
 
+    private static JSONLocalizator _instance;
+
     void Awake()
     {
-        if (instance == null)
+        if (!_instance)
+            _instance = this;
+        else
         {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
+            isEnglish = _instance.isEnglish;
+            Destroy(_instance.gameObject);
+            _instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
+
+        DontDestroyOnLoad(this.gameObject);
 
         InitializeLocalizator();
 

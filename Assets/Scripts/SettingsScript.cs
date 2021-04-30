@@ -36,6 +36,9 @@ public class SettingsScript : MonoBehaviour
 
         soundContoller = soundContollerObject.GetComponent<SoundController>();
 
+        musicSlider.value = musicSource.volume;
+        soundSlider.value = soundContoller.soundVolume;
+
         posOffset = duckyTheDuck.transform.position;
     }
 

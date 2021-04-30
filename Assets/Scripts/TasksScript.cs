@@ -63,8 +63,7 @@ public class TasksScript : MonoBehaviour
             tasksStatus.Add(openWindows, false);
             tasksStatus.Add(openTaxiApp, false);
         }
-        else
-            UpdateFields();
+        UpdateFields();
     }
 
     public void UpdateFields()

@@ -10,6 +10,8 @@ public class MenuScript : MonoBehaviour
     [SerializeField]
     GameObject gameMenu;
     [SerializeField]
+    GameObject saveConfirmaton;
+    [SerializeField]
     GameObject playerControl;
 
     [SerializeField]
@@ -19,6 +21,7 @@ public class MenuScript : MonoBehaviour
 
     private SaveData saveData;
     private SaveData loadData;
+
 
     private const string saveFileName = "/SaveData.json";
 
@@ -58,9 +61,12 @@ public class MenuScript : MonoBehaviour
 
     public void SaveGame()
     {
+        saveConfirmaton.SetActive(true);
         saveData.RecordMovableObjects(trackedMovableObjects);
         File.WriteAllText(Application.persistentDataPath + saveFileName, JsonConvert.SerializeObject(saveData, Formatting.Indented));
     }
+
+    public void CloseConfirmation() => saveConfirmaton.SetActive(false);
 
     public void LoadGame()
     {
