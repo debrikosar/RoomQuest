@@ -57,7 +57,7 @@ public class LaptopMP : MonoBehaviour, IInteract
             speed = 3;
         }
         else
-            speed = 15;
+            speed = 10;
             
         isCameraZoom = !isCameraZoom;
         while (Vector3.Distance(gameCamera.transform.position, ZoomTo.position) >= 0.1f || Quaternion.Angle(gameCamera.transform.rotation, ZoomTo.rotation) >= 0.1f)
@@ -67,6 +67,13 @@ public class LaptopMP : MonoBehaviour, IInteract
 
             yield return new WaitForEndOfFrame();          
         }
+
+        if (!isCameraZoom)
+        {
+            gameCamera.transform.position = cameraTransformData.transform.position;
+            gameCamera.transform.rotation = cameraTransformData.transform.rotation;
+        }
+
         StopCoroutine(startedCoroutine);
     }
 
